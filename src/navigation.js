@@ -3,40 +3,19 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Features (Anchor Link)',
+      text: 'Features',
       href: getPermalink('/#features'),
     },
     {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
+      text: 'FAQs',
+      href: getPermalink('/#faqs'),
+    },
+    {
+      text: 'Documentation',
+      href: 'https://docs.astronvim.com',
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: 'Get Started', icon: 'tabler:external-link', href: 'https://docs.astronvim.com', target: '_blank' }],
 };
 
 export const footerData = {
@@ -44,11 +23,17 @@ export const footerData = {
     {
       title: 'Products',
       links: [
-        { text: 'AstroNvim Documentation', href: 'https://docs.astronvim.com' },
+        { text: 'AstroNvim', href: 'https://docs.astronvim.com' },
         { text: 'AstroCommunity', href: 'https://git.astronvim.com/astrocommunity' },
+      ],
+    },
+    {
+      title: 'Plugins',
+      links: [
         { text: 'AstroCore', href: 'https://git.astronvim.com/astrocore' },
-        { text: 'AstroUI', href: 'https://git.astronvim.com/astroui' },
         { text: 'AstroLSP', href: 'https://git.astronvim.com/astrolsp' },
+        { text: 'AstroTheme', href: 'https://git.astronvim.com/astrotheme' },
+        { text: 'AstroUI', href: 'https://git.astronvim.com/astroui' },
       ],
     },
   ],
