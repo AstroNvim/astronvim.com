@@ -15,7 +15,9 @@ export const headerData = {
       href: 'https://docs.astronvim.com',
     },
   ],
-  actions: [{ text: 'Get Started', icon: 'tabler:external-link', href: 'https://docs.astronvim.com', target: '_blank' }],
+  actions: [
+    { text: 'Get Started', icon: 'tabler:external-link', href: 'https://docs.astronvim.com', target: '_blank' },
+  ],
 };
 
 export const footerData = {
@@ -49,6 +51,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://git.astronvim.com' },
   ],
   footNote: `
-    &copy; The AstorNvim Team. This site is powered by <a class="hover:underline" href="https://www.netlify.com/">Netlify</a> and <a class="hover:underline" href="https://github.com/onwidget/astrowind">AstroWind</a>.
+    &copy; The AstroNvim Team. This site is powered by <a class="hover:underline" href="https://www.netlify.com/">Netlify</a> and <a class="hover:underline" href="https://github.com/onwidget/astrowind">AstroWind</a>.
   `,
 };
