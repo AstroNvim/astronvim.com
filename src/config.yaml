@@ -18,13 +18,13 @@ metadata:
   openGraph:
     site_name: AstroNvim
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/banner.png'
+        width: 1000
+        height: 550
     type: website
   twitter:
-    handle: '@astronvim'
-    site: '@astronvim'
+    handle: '@AstroNvim'
+    site: '@AstroNvim'
     cardType: summary_large_image
 
 i18n:

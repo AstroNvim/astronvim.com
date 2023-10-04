@@ -45,83 +45,46 @@ const metadata = {
     <!-- </Fragment> -->
   </Hero>
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    id="stats",
-    tagline="Statistics",
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
   <!-- Features Widget *************** -->
 
-<Features2
-    id="Features"
-    title="Features"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+<Features
+    id="features"
+    tagline = "Features"
+    title="What you get with AstroNvim"
+    subtitle="A great out-of-box experience without compromising on speed or customization."
     items={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        title: 'Community Plugin Ecosystem',
+        description: "Access to <a href='https://community.astronvim.com' class='hover:underline dark:text-slate-400'>AstroCommunity</a>, an extensive community-maintained plugin marketplace that makes it easier than ever to add plugins or language support.",
+        icon: 'tabler:box-seam',
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        title: 'Automatic Tool Setup',
+        description: "No code necessary to get up and running with language server, linters, and formatters. Simply install them from the built in package manager Mason!",
+        icon: 'tabler:settings',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+        title: 'Fast Startup',
+        description: 'Fast startup time whether you are opening an empty Neovim session or opening a file directly through extensive lazy loading of plugins.',
+        icon: 'tabler:rocket',
       },
       {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
+        title: 'Aesthetic User Interface',
+        description: 'A beautiful user interface that focuses on proividing the information you need without wasting space or cluttering the screen.',
+        icon: 'tabler:palette',
       },
       {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
+        title: 'Modular Configuration',
+        description: 'A modular configuration built as a collection of plugins which are configured like any other Neovim plugin without the need for esoteric configuration mechanisms.',
+        icon: 'tabler:puzzle',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
+        title: 'Stability Focused Development',
+        description: 'Avoiding breaking changes, tracking versions of built in plugins, and strict adherence to semantic versioning provides a stable experience that can be updated reliably.',
+        icon: 'tabler:scale',
       },
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  />
 
   <!-- FAQs Widget ******************* -->
 
@@ -129,38 +92,27 @@ const metadata = {
     title="Frequently Asked Questions"
     id="faqs"
     subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: 'Why AstroNvim?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          "We found other Neovim configurations either being powerful out of the box but hard to customize, or easy to customize but minimal out of the box functionality. AstroNvim aims to find the middle ground with a great out of te box experience while empowering the user to make tweaks where they want.",
       },
       {
-        title: 'What do I need to start?',
+        title: 'How can I get started?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          "Getting started is super easy! Head over to the <a href='https://docs.astronvim.com' class='hover:underline dark:text-slate-400'>Getting Started Guide</a> which will step you through setting up the user template. From there you can start playing around with AstroNvim, but be sure to look through the rest of the documentation to see how to customize it further.",
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'Does AstroNvim support the language I code in?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          "Out of the box AstroNvim doesn't provide direct support for any one language, but provides a base for setting up any language easily. <a href='https://community.astronvim.com' class='hover:underline dark:text-slate-400'>AstroCommunity</a> is a community repository for sharing configuration snippets such as language support. AstroCommunity has >40 language packs that can be added to your configuration to get state of the art language support.",
       },
       {
-        title: "What's something that you don't understand?",
+        title: 'What if I have questions about using or customizing AstroNvim?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          "Feel free to join our <a href='https://discord.astronvim.com' class='hover:underline dark:text-slate-400'>Official Discord server</a>! We have a very active and welcoming community with a variety of skill sets and use cases for AstroNvim. People there are happy to help answer questions. Just make sure to read and understand the server rules, and search the server for previously asked questions.",
       },
     ]}
   />
