@@ -1,12 +1,13 @@
 ---
 import heroImage from "~/assets/space-timelapse.jpg";
+import { Image } from "astro:assets";
 
 const sizes = "100vw";
 ---
 
-<img
+<Image
   class="h-full w-full object-cover"
-  src={heroImage.src}
+  src={heroImage}
   sizes={sizes}
   alt="The ridged surface of the moon"
 />
