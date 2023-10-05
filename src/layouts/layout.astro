@@ -1,0 +1,24 @@
+---
+import Metadata from "~/components/metadata.astro";
+import Header from "~/components/header.astro";
+import Footer from "~/components/footer.astro";
+
+export interface Props {
+  title?: string;
+}
+
+const { title = "AstroNvim" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <Metadata title={title} />
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <slot />
+    <Footer />
+  </body>
+</html>
