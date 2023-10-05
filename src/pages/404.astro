@@ -1,45 +1,50 @@
 ---
 import Layout from "~/layouts/layout.astro";
 import { Icon } from "astro-icon/components";
-
-const old_docs_url = "https://docs.astronvim.com".concat(Astro.url.pathname);
 ---
 
 <Layout title="Error 404 - AstroNvim">
-  <section class="flex h-full items-center p-16">
-    <div
-      class="container mx-auto my-8 flex flex-col items-center justify-center px-5"
-    >
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="font-semibold text-3xl md:text-3xl">
-          Sorry, we couldn't find this page.
-        </p>
-        <p class="text-muted mb-8 mt-4 text-lg dark:text-slate-400">
-          If you are looking for the AstroNvim documentation site, that has been
-          moved to <a href="https://docs.astronvim.com">docs.astronvim.com</a>.
-        </p>
-        <a
-          rel="noopener noreferrer"
-          href="/"
-          class="flex items-center justify-center gap-3 bg-primary px-6 py-4 text-[--color-background]"
-        >
-          <Icon name="tabler:home" class="h-8 text-lg" />
-          <span>Go to homepage</span>
-        </a>
-        <br />
-        <a
-          rel="noopener noreferrer"
-          href={old_docs_url}
-          class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
-        >
-          <Icon name="tabler:telescope" class="h-8 text-lg" />
-          <span>Go to documentation</span>
-        </a>
-      </div>
+  <div
+    class="container mx-auto my-8 flex flex-col items-center justify-center px-5"
+  >
+    <div class="max-w-md text-center">
+      <h2 class="mb-8 font-bold text-9xl">
+        <span class="sr-only">Error</span>
+        <span class="text-primary">404</span>
+      </h2>
+      <p class="font-semibold text-3xl md:text-3xl">
+        Sorry, we couldn't find this page.
+      </p>
+      <p class="text-muted mb-8 mt-4 text-lg dark:text-slate-400">
+        If you are looking for the AstroNvim documentation site, that has been
+        moved to <a href="https://docs.astronvim.com">docs.astronvim.com</a>.
+      </p>
+      <a
+        rel="noopener noreferrer"
+        href="/"
+        class="flex items-center justify-center gap-3 bg-primary px-6 py-4 text-[--color-background]"
+      >
+        <Icon name="tabler:home" class="h-8 text-lg" />
+        <span>Go to homepage</span>
+      </a>
+      <br />
+      <a
+        id="docs_link"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      >
+        <Icon name="tabler:telescope" class="h-8 text-lg" />
+        <span>Go to documentation</span>
+      </a>
     </div>
-  </section>
+  </div>
+  <script>
+    var docs_link = document.getElementById("docs_link");
+    docs_link.setAttribute(
+      "href",
+      "https://docs.astronvim.com".concat(
+        new URL(window.location.href).pathname,
+      ),
+    );
+  </script>
 </Layout>
