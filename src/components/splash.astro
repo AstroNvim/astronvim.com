@@ -2,7 +2,7 @@
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
-import astrodark from "../assets/themes/astrodark.png";
+import astrodarkImage from "~/assets/themes/astrodark.png";
 import { Image } from "astro:assets";
 
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -37,7 +37,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       <picture class="h-full w-full object-cover"> </picture>
       <Image
         class="h-full w-full object-cover"
-        src={astrodark}
+        src={astrodarkImage}
         sizes={sizes}
         alt="AstroNvim Overview"
       />
