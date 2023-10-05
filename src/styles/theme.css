@@ -1,0 +1,49 @@
+:root {
+  --light-color-primary: #006e89;
+  --light-color-secondary: #90437a;
+  --light-color-text: #815654;
+  --light-color-text-offset: #937c7a;
+  --light-color-background: #feeeee;
+  --light-color-background-offset: #f9dcd1;
+  --light-color-border: #e7cfca;
+  --light-color-gradient-from: #0090a2;
+  --light-color-gradient-via: #bd51a4;
+  --light-color-gradient-to: #d04f4e;
+
+  --dark-color-primary: #1c87de;
+  --dark-color-secondary: #cc83e3;
+  --dark-color-text: #adb0bb;
+  --dark-color-text-offset: #696c76;
+  --dark-color-background: #1a1d23;
+  --dark-color-background-offset: #1e222a;
+  --dark-color-border: #3a3e47;
+  --dark-color-gradient-from: #50a4e9;
+  --dark-color-gradient-via: #cc83e3;
+  --dark-color-gradient-to: #f8747e;
+}
+
+[data-theme="light"] {
+  --color-primary: var(--light-color-primary);
+  --color-secondary: var(--light-color-secondary);
+  --color-text: var(--light-color-text);
+  --color-text-offset: var(--light-color-text-offset);
+  --color-background: var(--light-color-background);
+  --color-background-offset: var(--light-color-background-offset);
+  --color-border: var(--light-color-border);
+  --color-gradient-from: var(--light-color-gradient-from);
+  --color-gradient-via: var(--light-color-gradient-via);
+  --color-gradient-to: var(--light-color-gradient-to);
+}
+
+[data-theme="dark"] {
+  --color-primary: var(--dark-color-primary);
+  --color-secondary: var(--dark-color-secondary);
+  --color-text: var(--dark-color-text);
+  --color-text-offset: var(--dark-color-text-offset);
+  --color-background: var(--dark-color-background);
+  --color-background-offset: var(--dark-color-background-offset);
+  --color-border: var(--dark-color-border);
+  --color-gradient-from: var(--dark-color-gradient-from);
+  --color-gradient-via: var(--dark-color-gradient-via);
+  --color-gradient-to: var(--dark-color-gradient-to);
+}

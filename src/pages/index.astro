@@ -1,0 +1,103 @@
+---
+import "@fontsource-variable/inter";
+import { AstroSeo } from "@astrolib/seo";
+
+import Features from "~/components/features.astro";
+import FAQ from "~/components/faq.astro";
+import Footer from "~/components/footer.astro";
+import Header from "~/components/header.astro";
+import Intro from "~/components/intro.astro";
+import Splash from "~/components/splash.astro";
+import "~/styles/index.css";
+
+const { generator } = Astro;
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <AstroSeo
+      title="AstroNvim"
+      description="An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins"
+      canonical="https://astronvim.com"
+      openGraph={{
+        url: "https://astronvim.com",
+        title: "AstroNvim",
+        description:
+          "An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins",
+        images: [
+          {
+            url: "https://astronvim.com/logo/banner.png",
+            width: 1000,
+            height: 550,
+            alt: "AstroNvim banner",
+            type: "image/png",
+          },
+          {
+            url: "https://astronvim.com/themes/overview.png",
+            alt: "AstroNvim theme overview",
+          },
+          {
+            url: "https://astronvim.com/themes/astrodark.png",
+            alt: "AstroNvim AstroDark theme",
+          },
+          {
+            url: "https://astronvim.com/themes/astrolight.png",
+            alt: "AstroNvim AstroLight theme",
+          },
+          {
+            url: "https://astronvim.com/themes/astromars.png",
+            alt: "AstroNvim AstroMars theme",
+          },
+        ],
+        site_name: "AstroNvim",
+      }}
+      twitter={{
+        handle: "@AstroNvim",
+        site: "@AstroNvim",
+        cardType: "summary_large_image",
+      }}
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/logo/favicon.ico" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={generator} />
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header />
+    <Splash />
+    <div class="space-y-24 px-8 py-32">
+      <Intro />
+      <Features />
+      <FAQ />
+    </div>
+    <Footer />
+  </body>
+</html>

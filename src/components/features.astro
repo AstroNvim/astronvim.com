@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Community Plugin Ecosystem",
+    description:
+      "Access to <a href='https://community.astronvim.com' class='hover:underline dark:text-slate-400'>AstroCommunity</a>, an extensive community-maintained plugin marketplace that makes it easier than ever to add plugins or language support.",
+    icon: "tabler:box-seam",
+  },
+  {
+    title: "Automatic Tool Setup",
+    description:
+      "No code necessary to get up and running with language server, linters, and formatters. Simply install them from the built in package manager Mason!",
+    icon: "tabler:settings",
+  },
+  {
+    title: "Fast Startup",
+    description:
+      "Fast startup time whether you are opening an empty Neovim session or opening a file directly through extensive lazy loading of plugins.",
+    icon: "tabler:rocket",
+  },
+  {
+    title: "Aesthetic User Interface",
+    description:
+      "A beautiful user interface that focuses on proividing the information you need without wasting space or cluttering the screen.",
+    icon: "tabler:palette",
+  },
+  {
+    title: "Modular Configuration",
+    description:
+      "A modular configuration built as a collection of plugins which are configured like any other Neovim plugin without the need for esoteric configuration mechanisms.",
+    icon: "tabler:puzzle",
+  },
+  {
+    title: "Stability Focused Development",
+    description:
+      "Avoiding breaking changes, tracking versions of built in plugins, and strict adherence to semantic versioning provides a stable experience that can be updated reliably.",
+    icon: "tabler:scale",
+  },
+];
+---
+
+<ContentSection title="Features" id="features">
+  <Fragment slot="lead">
+    AstroNvim comes with a great out-of-box experience without compromising on <span
+      class="text-primary">speed</span
+    > or <span class="text-primary">customization</span>.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-primary p-3">
+            <Icon class="h-full w-full text-primary" name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl" set:html={title} />
+          <p class="text-center text-offset text-sm" set:html={description} />
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

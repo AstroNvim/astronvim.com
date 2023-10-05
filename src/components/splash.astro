@@ -1,0 +1,64 @@
+---
+import HeroImage from "~/components/hero-image.astro";
+import Starfield from "~/components/starfield.astro";
+import GitHubCorner from "./github-corner.astro";
+
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<section class="relative h-full bg-black">
+  <Starfield />
+  <GitHubCorner />
+  <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
+    <HeroImage />
+  </div>
+  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+    <h2
+      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <div
+        class="gradient-text-dark text-center font-extrabold tracking-tight text-8xl"
+      >
+        AstroNvim
+      </div>
+      <div
+        class="text-center font-extrabold tracking-tight text-[--dark-color-secondary] text-5xl"
+      >
+        Neovim with
+        <br /> batteries
+      </div>
+    </h2>
+    <div
+      id="overview"
+      class="w-2/3 max-w-3xl self-start p-8 sm:w-10/12 sm:self-auto sm:justify-self-start"
+    >
+      <picture class="h-full w-full object-cover"> </picture>
+      <img
+        class="h-full w-full object-cover"
+        src="/themes/astrodark.png"
+        sizes={sizes}
+        alt="AstroNvim Overview"
+      />
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    :global(#starfield) {
+      @apply hidden;
+    }
+
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+</style>

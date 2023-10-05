@@ -1,0 +1,40 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import type { FAQItem } from "~/types";
+
+const faqs: Array<FAQItem> = [
+  {
+    question: "Why AstroNvim?",
+    answer:
+      "We found other Neovim configurations either being powerful out of the box but hard to customize, or easy to customize but minimal out of the box functionality. AstroNvim aims to find the middle ground with a great out of te box experience while empowering the user to make tweaks where they want.",
+  },
+  {
+    question: "How can I get started?",
+    answer:
+      "Getting started is super easy! Head over to the <a href='https://docs.astronvim.com' class='hover:underline dark:text-slate-400'>Getting Started Guide</a> which will step you through setting up the user template. From there you can start playing around with AstroNvim, but be sure to look through the rest of the documentation to see how to customize it further.",
+  },
+  {
+    question: "Does AstroNvim support the language I code in?",
+    answer:
+      "Out of the box AstroNvim doesn't provide direct support for any one language, but provides a base for setting up any language easily. <a href='https://community.astronvim.com' class='hover:underline dark:text-slate-400'>AstroCommunity</a> is a community repository for sharing configuration snippets such as language support. AstroCommunity has >40 language packs that can be added to your configuration to get state of the art language support.",
+  },
+  {
+    question: "What if I have questions about using or customizing AstroNvim?",
+    answer:
+      "Feel free to join our <a href='https://discord.astronvim.com' class='hover:underline dark:text-slate-400'>Official Discord server</a>! We have a very active and welcoming community with a variety of skill sets and use cases for AstroNvim. People there are happy to help answer questions. Just make sure to read and understand the server rules, and search the server for previously asked questions.",
+  },
+];
+---
+
+<ContentSection title="Frequently Asked Questions" id="faqs">
+  <ul class="grid max-w-7xl grid-cols-1 gap-7 md:grid-cols-2">
+    {
+      faqs.map(({ question, answer }) => (
+        <li class="flex flex-col gap-4 p-6">
+          <p class="font-extrabold text-xl" set:html={question} />
+          <p class="text-offset text-sm" set:html={answer} />
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

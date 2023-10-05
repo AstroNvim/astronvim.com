@@ -1,0 +1,23 @@
+/* TODO: consider creating <Button> and <GradientText> components */
+a,
+.btn {
+  @apply transition-colors duration-200;
+  @apply hover:text-secondary;
+  @apply rounded-full;
+  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-[--color-gradient-from] via-[--color-gradient-via] to-[--color-gradient-to];
+}
+
+.gradient-text-dark {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-[--dark-color-gradient-from] via-[--dark-color-gradient-via] to-[--dark-color-gradient-to];
+}
+
+.gradient-text-light {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-[--light-color-gradient-from] via-[--light-color-gradient-via] to-[--light-color-gradient-to];
+}
