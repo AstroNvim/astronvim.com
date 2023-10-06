@@ -6,14 +6,14 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://astronvim.com",
   integrations: [
     tailwind(),
     sitemap(),
     icon({
       include: {
         tabler: ["*"],
-      }
+      },
     }),
     compress({
       CSS: true,
@@ -26,7 +26,7 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      external: ["svgo"]
-    }
-  }
+      external: ["svgo"],
+    },
+  },
 });
