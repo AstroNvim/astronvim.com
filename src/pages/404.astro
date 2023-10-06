@@ -40,11 +40,10 @@ import { Icon } from "astro-icon/components";
   </div>
   <script>
     var docs_link = document.getElementById("docs_link");
+    const url = new URL(window.location.href);
     docs_link.setAttribute(
       "href",
-      "https://docs.astronvim.com".concat(
-        new URL(window.location.href).pathname,
-      ),
+      "https://docs.astronvim.com".concat(url.pathname, url.search, url.hash),
     );
   </script>
 </Layout>
