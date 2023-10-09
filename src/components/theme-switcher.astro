@@ -41,11 +41,11 @@ import { Icon } from "astro-icon/components";
   const updateIcon = () => {
     const themeCurrent = getThemeCurrent();
     document
-      .getElementById(`#icon-theme-${themeCurrent}`)
+      .querySelector(`#icon-theme-${themeCurrent}`)
       ?.classList.add("hidden");
     const themeNext = getThemeNext();
     document
-      .getElementById(`#icon-theme-${themeNext}`)
+      .querySelector(`#icon-theme-${themeNext}`)
       ?.classList.remove("hidden");
 
     const overviewImage = document.getElementById("overview-image") as HTMLImageElement;
