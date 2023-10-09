@@ -4,7 +4,7 @@ a,
   @apply transition-colors duration-200;
   @apply hover:text-secondary;
   @apply rounded-full;
-  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+  @apply focus:outline-none;
 }
 
 .gradient-text {

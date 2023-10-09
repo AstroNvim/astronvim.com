@@ -9,7 +9,7 @@ import { Icon } from "astro-icon/components";
 <button
   id="theme-switcher"
   type="button"
-  class="-ml-14 origin-[right_center] scale-0 transition-all duration-500"
+  class="ml-0 origin-[right_center]"
 >
   <div id="icon-theme-light">
     <Icon name="tabler:moon" class="h-8 text-lg" />
@@ -23,6 +23,8 @@ import { Icon } from "astro-icon/components";
 
 <script>
   import invariant from "tiny-invariant";
+  import astrodark from "~/assets/themes/astrodark.png";
+  import astrolight from "~/assets/themes/astrolight.png";
 
   const themes = ["light", "dark"];
   const button = document.querySelector("#theme-switcher");
@@ -45,6 +47,9 @@ import { Icon } from "astro-icon/components";
     document
       .querySelector(`#icon-theme-${themeNext}`)
       ?.classList.remove("hidden");
+
+    const overviewImage = document.getElementById("overview-image") as HTMLImageElement;
+    overviewImage.src = themeCurrent === "dark" ? astrodark.src : astrolight.src;
   };
 
   button.addEventListener("click", () => {
@@ -56,9 +61,3 @@ import { Icon } from "astro-icon/components";
 
   updateIcon();
 </script>
-
-<style>
-  :global(.fixed-header) #theme-switcher {
-    @apply ml-0 scale-100;
-  }
-</style>
