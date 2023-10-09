@@ -8,6 +8,7 @@ const navItems: Array<NavItem> = [
   { title: "FAQs", url: "#faqs" },
   { title: "AstroCommunity", url: "https://git.astronvim.com/AstroCommunity" },
   { title: "Documentation", url: "https://docs.astronvim.com" },
+  { title: "Socials", icon: "tabler:at", url: "#socials" },
 ];
 ---
 
@@ -28,9 +29,11 @@ const navItems: Array<NavItem> = [
       <nav class="hidden sm:block">
         <ul class="flex items-center gap-6">
           {
-            navItems.map(({ title, url }) => (
+            navItems.map(({ title, icon, url }) => (
               <li>
-                <a class="text-sm" href={url} set:html={title} />
+                <a class="text-sm" href={url} title={title}>
+                  {icon ? <Icon class="text-base" name={icon} /> : title}
+                </a>
               </li>
             ))
           }

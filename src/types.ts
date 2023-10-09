@@ -17,5 +17,6 @@ export interface FooterLink {
 
 export interface NavItem {
   title: string;
+  icon?: string;
   url: string;
 }
