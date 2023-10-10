@@ -1,4 +1,10 @@
 {
+  "name": "AstroNvim",
+  "start_url": "https://astronvim.com",
+  "description": "Landing page for the AstroNvim Neovim configuration.",
+  "display": "standalone",
+  "background_color": "#1a1d23",
+  "theme_color": "#1a1d23",
   "icons": [
     {
       "src": "/logo/android-chrome-192x192.png",
@@ -6,9 +12,21 @@
       "sizes": "192x192"
     },
     {
+      "src": "/logo/maskable_icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
       "src": "/logo/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/logo/maskable_icon_x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ]
 }
