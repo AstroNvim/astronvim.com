@@ -4,11 +4,17 @@ import ContentSection from "~/components/content-section.astro";
 import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
-  {
-    title: "Community Plugin Ecosystem",
+{
+    title: "Fast Startup",
     description:
-      "Access to <a href='https://git.astronvim.com/AstroCommunity' class='hover:underline text-primary'>AstroCommunity</a>, an extensive community-maintained plugin marketplace that makes it easier than ever to add plugins or language support.",
-    icon: "tabler:box-seam",
+      "Fast startup time whether you are opening an empty Neovim session or opening a file directly through extensive lazy loading of plugins.",
+    icon: "tabler:rocket",
+  },
+  {
+    title: "Modular Configuration",
+    description:
+      "A modular configuration built as a collection of plugins which are configured like any other Neovim plugin without the need for esoteric configuration mechanisms.",
+    icon: "tabler:puzzle",
   },
   {
     title: "Automatic Tool Setup",
@@ -17,22 +23,16 @@ const features: Array<FeatureItem> = [
     icon: "tabler:settings",
   },
   {
-    title: "Fast Startup",
+    title: "Community Plugin Ecosystem",
     description:
-      "Fast startup time whether you are opening an empty Neovim session or opening a file directly through extensive lazy loading of plugins.",
-    icon: "tabler:rocket",
+      "Access to <a href='https://git.astronvim.com/AstroCommunity' class='hover:underline text-primary'>AstroCommunity</a>, an extensive community-maintained plugin marketplace that makes it easier than ever to add plugins or language support.",
+    icon: "tabler:box-seam",
   },
   {
     title: "Aesthetic User Interface",
     description:
       "A beautiful user interface that focuses on proividing the information you need without wasting space or cluttering the screen.",
     icon: "tabler:palette",
-  },
-  {
-    title: "Modular Configuration",
-    description:
-      "A modular configuration built as a collection of plugins which are configured like any other Neovim plugin without the need for esoteric configuration mechanisms.",
-    icon: "tabler:puzzle",
   },
   {
     title: "Stability Focused Development",
@@ -49,10 +49,10 @@ const features: Array<FeatureItem> = [
       class="text-primary">speed</span
     > or <span class="text-primary">customization</span>.
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {
       features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+        <li class="flex flex-col items-center gap-4 border border-default rounded-xl bg-offset p-6">
           <div class="h-16 w-16 rounded-full border-2 border-primary p-3">
             <Icon class="h-full w-full text-primary" name={icon} />
           </div>
