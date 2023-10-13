@@ -49,10 +49,10 @@ const features: Array<FeatureItem> = [
       class="text-primary">speed</span
     > or <span class="text-primary">customization</span>.
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {
       features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+        <li class="flex flex-col items-center gap-4 border border-default rounded-xl bg-offset p-6">
           <div class="h-16 w-16 rounded-full border-2 border-primary p-3">
             <Icon class="h-full w-full text-primary" name={icon} />
           </div>
