@@ -30,7 +30,7 @@ const faqs: Array<FAQItem> = [
   <ul class="grid max-w-7xl grid-cols-1 gap-7 md:grid-cols-2">
     {
       faqs.map(({ question, answer }) => (
-        <li class="flex flex-col gap-4 p-6">
+        <li class="flex flex-col gap-4 md:p-6">
           <p class="font-extrabold text-xl" set:html={question} />
           <p class="text-offset text-sm" set:html={answer} />
         </li>
