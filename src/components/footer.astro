@@ -31,12 +31,12 @@ const links: Array<FooterLink> = [
 ];
 ---
 
-<footer class="relative h-64 bg-offset">
-  <div id="socials" class="flex justify-center py-14">
-    <ul class="relative grid grid-cols-5 gap-4">
+<footer class="relative bg-offset py-14">
+  <div id="socials" class="flex justify-center pb-14">
+    <ul class="flex flex-wrap justify-center px-6 max-w-[350px] sm:max-w-none">
       {
         links.map((link) => (
-          <li>
+          <li class="m-2">
             <a
               class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
               rel="me"
@@ -50,7 +50,7 @@ const links: Array<FooterLink> = [
       }
     </ul>
   </div>
-  <div class="flex justify-center text-offset text-sm">
+  <div class="flex justify-center text-offset text-sm px-8">
     <p>
       &copy; The AstroNvim Team. This site is powered by
       <a class="hover:underline" href="https://astro.build/">AstroJS</a>, <a
