@@ -21,12 +21,15 @@ import { Image } from "astro:assets";
       <span>Get started</span>
     </a>
     <div class="mx-auto max-w-screen-2xl pt-8">
-      <Image
-        class="relative w-full rounded-lg border border-default"
-        id="overview-image"
-        src={astrodarkImage}
-        alt="AstroNvim Overview"
-      />
+      <div class="relative">
+        <div class="absolute inset-0 rounded-lg bg-primary blur-lg"></div>
+        <Image
+          class="relative w-full rounded-lg border border-default"
+          id="overview-image"
+          src={astrodarkImage}
+          alt="AstroNvim Overview"
+        />
+      </div>
     </div>
   </ContentSection>
 </div>
