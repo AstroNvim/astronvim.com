@@ -3,8 +3,6 @@ import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 import astrodarkImage from "~/assets/themes/astrodark.png";
 import { Image } from "astro:assets";
-
-const sizes = "(min-width: 1344px) 1278px, 90vw";
 ---
 
 <div class="relative">
@@ -28,12 +26,11 @@ const sizes = "(min-width: 1344px) 1278px, 90vw";
       <Icon name="tabler:rocket" class="h-8 text-lg" />
       <span>Get started</span>
     </a>
-    <div class="mx-auto max-w-7xl pt-8">
+    <div class="mx-auto max-w-screen-2xl pt-8">
       <Image
         class="relative w-full rounded-lg border border-default"
         id="overview-image"
         src={astrodarkImage}
-        sizes={sizes}
         alt="AstroNvim Overview"
       />
     </div>
