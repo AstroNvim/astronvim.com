@@ -9,7 +9,7 @@ const navItems: Array<NavItem> = [
   { title: "AstroCommunity", url: "https://git.astronvim.com/AstroCommunity" },
   { title: "Documentation", url: "https://docs.astronvim.com" },
   {
-    title: "Github",
+    title: "Source Code",
     icon: "tabler:brand-github",
     url: "https://git.astronvim.com",
   },
@@ -68,7 +68,13 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <img src="/logo/astronvim.svg" class="h-16" alt="astronvim_logo" />
+            <a href="#" aria-label="AstroNvim" id="home-nav-button">
+              <img
+                src="/logo/astronvim.svg"
+                class="h-16"
+                alt="astronvim_logo"
+              />
+            </a>
           </div>
           <nav>
             <ul class="flex flex-col">
@@ -99,11 +105,13 @@ const navItems: Array<NavItem> = [
   const menu = document.querySelector(`#${menuModalId} ul`);
   const openNavButton = document.querySelector("#open-nav-button");
   const closeNavButton = document.querySelector("#close-nav-button");
+  const homeNavButton = document.querySelector("#home-nav-button");
 
   invariant(header, "header should not be null");
   invariant(menu, "menu should not be null");
   invariant(openNavButton, "openNavButton should not be null");
   invariant(closeNavButton, "closeNavButton should not be null");
+  invariant(homeNavButton, "homeNavButton should not be null");
 
   const openMenu = () => {
     MicroModal.show(menuModalId, { disableScroll: true });
@@ -115,6 +123,7 @@ const navItems: Array<NavItem> = [
 
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
+  homeNavButton.addEventListener("click", closeMenu);
 
   menu.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {
