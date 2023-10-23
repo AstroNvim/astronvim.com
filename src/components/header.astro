@@ -8,21 +8,26 @@ const navItems: Array<NavItem> = [
   { title: "FAQs", url: "#faqs" },
   { title: "AstroCommunity", url: "https://git.astronvim.com/AstroCommunity" },
   { title: "Documentation", url: "https://docs.astronvim.com" },
+  {
+    title: "Source Code",
+    icon: "tabler:brand-github",
+    url: "https://git.astronvim.com",
+  },
   { title: "Socials", icon: "tabler:at", url: "#socials" },
 ];
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="sticky top-0 z-20 flex w-full items-center justify-between border-b border-default bg-default px-8 py-4 text-default"
 >
   <a
     class="flex items-center gap-3 hover:!text-default"
     href="#"
     aria-label="AstroNvim"
   >
-    <img src="/logo/astronvim.svg" alt="AstroNvim logo" class="h-10" />
-    <h1 class="hidden h-6 font-bold md:block">AstroNvim</h1>
+    <img src="/logo/astronvim.svg" alt="AstroNvim logo" class="h-5" />
+    <h1 class="hidden h-4 font-bold leading-none md:block">AstroNvim</h1>
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -63,7 +68,13 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <img src="/logo/astronvim.svg" class="h-16" alt="astronvim_logo" />
+            <a href="#" aria-label="AstroNvim" id="home-nav-button">
+              <img
+                src="/logo/astronvim.svg"
+                class="h-16"
+                alt="astronvim_logo"
+              />
+            </a>
           </div>
           <nav>
             <ul class="flex flex-col">
@@ -91,15 +102,16 @@ const navItems: Array<NavItem> = [
   const menuModalId = "menu-modal";
 
   const header = document.querySelector("#page-header") as HTMLElement;
-  const page = document.documentElement;
   const menu = document.querySelector(`#${menuModalId} ul`);
   const openNavButton = document.querySelector("#open-nav-button");
   const closeNavButton = document.querySelector("#close-nav-button");
+  const homeNavButton = document.querySelector("#home-nav-button");
 
   invariant(header, "header should not be null");
   invariant(menu, "menu should not be null");
   invariant(openNavButton, "openNavButton should not be null");
   invariant(closeNavButton, "closeNavButton should not be null");
+  invariant(homeNavButton, "homeNavButton should not be null");
 
   const openMenu = () => {
     MicroModal.show(menuModalId, { disableScroll: true });
@@ -111,11 +123,7 @@ const navItems: Array<NavItem> = [
 
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
-
-  document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-    header.classList.toggle("fixed-header", d < 0);
-  });
+  homeNavButton.addEventListener("click", closeMenu);
 
   menu.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {
@@ -133,10 +141,6 @@ const navItems: Array<NavItem> = [
 </noscript>
 
 <style>
-  .fixed-header {
-    @apply fixed bottom-auto top-0;
-    @apply border-default bg-default text-default;
-  }
   .modal.is-open {
     @apply block;
   }
