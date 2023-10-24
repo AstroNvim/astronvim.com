@@ -60,24 +60,24 @@ const { title = "AstroNvim" } = Astro.props;
 
 <!-- initialize theme -->
 <script is:inline>
-const themeSaved = localStorage.getItem("theme");
+const rawThemeSaved = localStorage.getItem("raw_theme");
+document.documentElement.dataset.raw_theme = rawThemeSaved
+  ? rawThemeSaved
+  : "auto";
 
-if (themeSaved) {
-  document.documentElement.dataset.theme = themeSaved;
-} else {
-  const prefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  ).matches;
-  document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-}
+const updateTheme = () => {
+  const theme = document.documentElement.dataset.raw_theme;
+  document.documentElement.dataset.theme =
+    theme === "auto"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+      : theme;
+};
 
 window
   .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", (event) => {
-    if (!localStorage.getItem("theme")) {
-      document.documentElement.dataset.theme = event.matches
-        ? "dark"
-        : "light";
-    }
-  });
+  .addEventListener("change", updateTheme);
+
+updateTheme();
 </script>

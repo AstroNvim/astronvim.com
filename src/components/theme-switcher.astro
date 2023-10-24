@@ -7,11 +7,15 @@ import { Icon } from "astro-icon/components";
   TODO don't hardcode these values
 -->
 <button id="theme-switcher" type="button" class="ml-0 origin-[right_center]">
-  <div id="icon-theme-light">
-    <Icon name="tabler:moon" class="h-8 text-lg" />
-    <span class="sr-only">Use light theme</span>
+  <div id="icon-theme-auto">
+    <Icon name="tabler:sun-moon" class="h-8 text-lg" />
+    <span class="sr-only">Use dark theme</span>
   </div>
   <div id="icon-theme-dark" class="hidden">
+    <Icon name="tabler:moon" class="h-8 text-lg" />
+    <span class="sr-only">Use auto theme</span>
+  </div>
+  <div id="icon-theme-light" class="hidden">
     <Icon name="tabler:sun" class="h-8 text-lg" />
     <span class="sr-only">Use dark theme</span>
   </div>
@@ -20,41 +24,53 @@ import { Icon } from "astro-icon/components";
 <script>
   import invariant from "tiny-invariant";
 
-  const themes = ["light", "dark"];
+  const themes = ["auto", "dark", "light"];
   const button = document.querySelector("#theme-switcher");
   invariant(button, "button should not be null");
 
-  const getThemeCurrent = () => document.documentElement.dataset.theme;
   const getThemeNext = () => {
-    const themeCurrent = getThemeCurrent();
+    const themeCurrent = document.documentElement.dataset.raw_theme;
     invariant(themeCurrent, "themeCurrent should not be undefined");
     const indexThemeCurrent = themes.indexOf(themeCurrent);
     return themes[(indexThemeCurrent + 1) % themes.length];
   };
 
-  const updateIcon = () => {
-    const themeCurrent = getThemeCurrent();
-    document
-      .querySelector(`#icon-theme-${themeCurrent}`)
-      ?.classList.add("hidden");
-    document
-      .querySelector(`#overview-image-${themeCurrent}`)
-      ?.classList.add("hidden");
-    const themeNext = getThemeNext();
-    document
-      .querySelector(`#icon-theme-${themeNext}`)
-      ?.classList.remove("hidden");
-    document
-      .querySelector(`#overview-image-${themeNext}`)
-      ?.classList.remove("hidden");
+  const updateTheme = () => {
+    const theme = document.documentElement.dataset.raw_theme;
+    document.documentElement.dataset.theme =
+      theme === "auto"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+        : theme;
+  };
+
+  const updateAssets = () => {
+    updateTheme();
+    const themeCurrent = document.documentElement.dataset.theme;
+    const themeCurrentRaw = document.documentElement.dataset.raw_theme;
+    for (const theme of themes) {
+      document
+        .querySelector(`#overview-image-${theme}`)
+        ?.classList[themeCurrent == theme ? "remove" : "add"]("hidden");
+      document
+        .querySelector(`#icon-theme-${theme}`)
+        ?.classList[themeCurrentRaw == theme ? "remove" : "add"]("hidden");
+    }
   };
 
   button.addEventListener("click", () => {
     const themeNext = getThemeNext();
-    document.documentElement.dataset.theme = themeNext;
-    localStorage.setItem("theme", themeNext);
-    updateIcon();
+    document.documentElement.dataset.raw_theme = themeNext;
+    localStorage.setItem("raw_theme", themeNext);
+    updateAssets();
   });
 
-  updateIcon();
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", () => {
+      document.documentElement.dataset.raw_theme === "auto" && updateAssets();
+    });
+
+  updateAssets();
 </script>

@@ -26,16 +26,16 @@ import { Image } from "astro:assets";
         class="relative rounded-lg bg-gradient-to-br from-[--color-gradient-from] via-[--color-gradient-via] to-[--color-gradient-to] p-[0.0625rem] md:p-1"
       >
         <Image
-          class="rounded-lg"
-          id="overview-image-light"
+          class="hidden rounded-lg"
+          id="overview-image-dark"
           src={astrodarkImage}
           widths={[240, 540, 720, 1600]}
           alt="AstroNvim Dark Theme Overview"
           loading="eager"
         />
         <Image
-          class="hidden rounded-lg"
-          id="overview-image-dark"
+          class="rounded-lg"
+          id="overview-image-light"
           src={astrolightImage}
           widths={[360, 540, 720, 1080, 1600]}
           alt="AstroNvim Light Theme Overview"
