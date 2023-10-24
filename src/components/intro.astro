@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 import astrodarkImage from "~/assets/themes/astrodark.png";
+import astrolightImage from "~/assets/themes/astrolight.png";
 import { Image } from "astro:assets";
 ---
 
@@ -26,9 +27,18 @@ import { Image } from "astro:assets";
       >
         <Image
           class="rounded-lg"
-          id="overview-image"
+          id="overview-image-light"
           src={astrodarkImage}
-          alt="AstroNvim Overview"
+          widths={[240, 540, 720, 1600]}
+          alt="AstroNvim Dark Theme Overview"
+          loading="eager"
+        />
+        <Image
+          class="hidden rounded-lg"
+          id="overview-image-dark"
+          src={astrolightImage}
+          widths={[360, 540, 720, 1080, 1600]}
+          alt="AstroNvim Light Theme Overview"
           loading="eager"
         />
       </div>

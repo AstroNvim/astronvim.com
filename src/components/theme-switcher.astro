@@ -6,11 +6,7 @@ import { Icon } from "astro-icon/components";
   negative margin is sum of button width (8) and gap size of flex parent (6)
   TODO don't hardcode these values
 -->
-<button
-  id="theme-switcher"
-  type="button"
-  class="ml-0 origin-[right_center]"
->
+<button id="theme-switcher" type="button" class="ml-0 origin-[right_center]">
   <div id="icon-theme-light">
     <Icon name="tabler:moon" class="h-8 text-lg" />
     <span class="sr-only">Use light theme</span>
@@ -23,8 +19,6 @@ import { Icon } from "astro-icon/components";
 
 <script>
   import invariant from "tiny-invariant";
-  import astrodark from "~/assets/themes/astrodark.png";
-  import astrolight from "~/assets/themes/astrolight.png";
 
   const themes = ["light", "dark"];
   const button = document.querySelector("#theme-switcher");
@@ -43,13 +37,16 @@ import { Icon } from "astro-icon/components";
     document
       .querySelector(`#icon-theme-${themeCurrent}`)
       ?.classList.add("hidden");
+    document
+      .querySelector(`#overview-image-${themeCurrent}`)
+      ?.classList.add("hidden");
     const themeNext = getThemeNext();
     document
       .querySelector(`#icon-theme-${themeNext}`)
       ?.classList.remove("hidden");
-
-    const overviewImage = document.getElementById("overview-image") as HTMLImageElement;
-    overviewImage.src = themeCurrent === "dark" ? astrodark.src : astrolight.src;
+    document
+      .querySelector(`#overview-image-${themeNext}`)
+      ?.classList.remove("hidden");
   };
 
   button.addEventListener("click", () => {
