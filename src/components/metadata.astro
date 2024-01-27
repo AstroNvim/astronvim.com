@@ -14,13 +14,13 @@ const { title = "AstroNvim" } = Astro.props;
 
 <AstroSeo
   title={title}
-  description="An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins"
+  description="An aesthetically pleasing and feature-rich neovim config that is extensible and easy to use with a great set of plugins"
   canonical="https://astronvim.com"
   openGraph={{
     url: "https://astronvim.com",
     title: title,
     description:
-      "An aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins",
+      "An aesthetically pleasing and feature-rich neovim config that is extensible and easy to use with a great set of plugins",
     images: [
       {
         url: "https://astronvim.com/logo/banner.png",
@@ -60,24 +60,24 @@ const { title = "AstroNvim" } = Astro.props;
 
 <!-- initialize theme -->
 <script is:inline>
-const rawThemeSaved = localStorage.getItem("raw_theme");
-document.documentElement.dataset.raw_theme = rawThemeSaved
-  ? rawThemeSaved
-  : "auto";
+  const rawThemeSaved = localStorage.getItem("raw_theme");
+  document.documentElement.dataset.raw_theme = rawThemeSaved
+    ? rawThemeSaved
+    : "auto";
 
-const updateTheme = () => {
-  const theme = document.documentElement.dataset.raw_theme;
-  document.documentElement.dataset.theme =
-    theme === "auto"
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light"
-      : theme;
-};
+  const updateTheme = () => {
+    const theme = document.documentElement.dataset.raw_theme;
+    document.documentElement.dataset.theme =
+      theme === "auto"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+        : theme;
+  };
 
-window
-  .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", updateTheme);
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", updateTheme);
 
-updateTheme();
+  updateTheme();
 </script>
