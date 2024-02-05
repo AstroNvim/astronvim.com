@@ -1,14 +1,14 @@
 :root {
-  --light-color-primary: #004e61;
-  --light-color-secondary: #6b2e58;
-  --light-color-text: #5d3e3c;
-  --light-color-text-offset: #504444;
-  --light-color-background: #feeeee;
-  --light-color-background-offset: #f9dcd1;
-  --light-color-border: #e7cfca;
-  --light-color-gradient-from: #004e61;
-  --light-color-gradient-via: #6b2e58;
-  --light-color-gradient-to: #842624;
+  --light-color-primary: #00508a;
+  --light-color-secondary: #7300b8;
+  --light-color-text: #1c1c1c;
+  --light-color-text-offset: #4c5057;
+  --light-color-background: #f7f8f8;
+  --light-color-background-offset: #f0f0f1;
+  --light-color-border: #d4d7d9;
+  --light-color-gradient-from: #00508a;
+  --light-color-gradient-via: #7300b8;
+  --light-color-gradient-to: #9e007c;
 
   --dark-color-primary: #76b6ef;
   --dark-color-secondary: #d597e8;
@@ -22,7 +22,7 @@
   --dark-color-gradient-to: #f8919a;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --color-primary: var(--light-color-primary);
   --color-secondary: var(--light-color-secondary);
   --color-text: var(--light-color-text);
@@ -35,7 +35,7 @@
   --color-gradient-to: var(--light-color-gradient-to);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --color-primary: var(--dark-color-primary);
   --color-secondary: var(--dark-color-secondary);
   --color-text: var(--dark-color-text);
