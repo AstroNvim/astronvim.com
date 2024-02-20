@@ -17,7 +17,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@netlify/plugin-lighthouse": "^5.0.0",
     "@types/micromodal": "^0.3.4",
-    "astro": "^4.3.2",
+    "astro": "^4.4.1",
     "astro-icon": "1.0.0-next.2",
     "netlify-plugin-checklinks": "^4.1.1",
     "netlify-plugin-submit-sitemap": "^0.4.0",
@@ -28,7 +28,7 @@
     "tailwindcss-fluid-type": "^2.0.3"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/sitemap": "^3.1.0",
     "@astrolib/seo": "^0.6.0",
     "@fontsource-variable/inter": "^5.0.15",
     "@iconify-json/tabler": "^1.1.95",
