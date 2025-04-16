@@ -66,9 +66,14 @@
 a,
 .btn {
   @apply transition-colors duration-200;
-  @apply hover:text-bg;
+  @apply hover:text-secondary;
   @apply rounded-full;
   @apply focus:outline-none;
+}
+
+.big-btn {
+  @apply hover:text-bg;
+  @apply hover:bg-secondary;
 }
 
 .gradient-text {
