@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import type { FooterLink } from "~/types";
+import type { FooterLink } from "../types";
 
 const links: Array<FooterLink> = [
   {
@@ -31,9 +31,9 @@ const links: Array<FooterLink> = [
 ];
 ---
 
-<footer class="relative bg-offset py-14">
+<footer class="relative bg-bg-offset py-14">
   <div id="socials" class="flex justify-center pb-14">
-    <ul class="flex flex-wrap justify-center px-6 max-w-[350px] sm:max-w-none">
+    <ul class="flex flex-wrap justify-center px-6 max-w-(350px) sm:max-w-none">
       {
         links.map((link) => (
           <li class="m-2">
@@ -50,7 +50,7 @@ const links: Array<FooterLink> = [
       }
     </ul>
   </div>
-  <div class="flex justify-center text-offset text-sm px-8">
+  <div class="flex justify-center text-text-offset text-sm px-8">
     <p>
       &copy; The AstroNvim Team. This site is powered by
       <a class="hover:underline" href="https://astro.build/">AstroJS</a>, <a

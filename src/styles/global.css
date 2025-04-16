@@ -1,23 +1,87 @@
-/* TODO: consider creating <Button> and <GradientText> components */
+@import "tailwindcss";
+
+@config "../../tailwind.config.cjs";
+
+@theme {
+  --font-sans: "Inter Variable";
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-text: var(--color-text);
+  --color-text-offset: var(--color-text-offset);
+  --color-bg: var(--color-background);
+  --color-bg-offset: var(--color-background-offset);
+  --color-border: var(--color-border);
+}
+
+:root {
+  --light-color-primary: #00508a;
+  --light-color-secondary: #7300b8;
+  --light-color-text: #1c1c1c;
+  --light-color-text-offset: #4c5057;
+  --light-color-background: #f7f8f8;
+  --light-color-background-offset: #f0f0f1;
+  --light-color-border: #d4d7d9;
+  --light-color-gradient-from: #00508a;
+  --light-color-gradient-via: #7300b8;
+  --light-color-gradient-to: #9e007c;
+
+  --dark-color-primary: #76b6ef;
+  --dark-color-secondary: #d597e8;
+  --dark-color-text: #c5ccce;
+  --dark-color-text-offset: #afb3b6;
+  --dark-color-background: #1a1d23;
+  --dark-color-background-offset: #1e222a;
+  --dark-color-border: #3a3e47;
+  --dark-color-gradient-from: #76b6ef;
+  --dark-color-gradient-via: #d597e8;
+  --dark-color-gradient-to: #f8919a;
+}
+
+[data-theme="light"] {
+  --color-primary: var(--light-color-primary);
+  --color-secondary: var(--light-color-secondary);
+  --color-text: var(--light-color-text);
+  --color-text-offset: var(--light-color-text-offset);
+  --color-background: var(--light-color-background);
+  --color-background-offset: var(--light-color-background-offset);
+  --color-border: var(--light-color-border);
+  --color-gradient-from: var(--light-color-gradient-from);
+  --color-gradient-via: var(--light-color-gradient-via);
+  --color-gradient-to: var(--light-color-gradient-to);
+}
+
+[data-theme="dark"] {
+  --color-primary: var(--dark-color-primary);
+  --color-secondary: var(--dark-color-secondary);
+  --color-text: var(--dark-color-text);
+  --color-text-offset: var(--dark-color-text-offset);
+  --color-background: var(--dark-color-background);
+  --color-background-offset: var(--dark-color-background-offset);
+  --color-border: var(--dark-color-border);
+  --color-gradient-from: var(--dark-color-gradient-from);
+  --color-gradient-via: var(--dark-color-gradient-via);
+  --color-gradient-to: var(--dark-color-gradient-to);
+}
+
 a,
 .btn {
   @apply transition-colors duration-200;
-  @apply hover:text-secondary;
+  @apply hover:text-bg;
   @apply rounded-full;
   @apply focus:outline-none;
 }
 
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-[--color-gradient-from] via-[--color-gradient-via] to-[--color-gradient-to];
+  @apply bg-gradient-to-br from-(--color-gradient-from) via-(--color-gradient-via) to-(--color-gradient-to);
 }
 
 .gradient-text-dark {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-[--dark-color-gradient-from] via-[--dark-color-gradient-via] to-[--dark-color-gradient-to];
+  @apply bg-gradient-to-br from-(--dark-color-gradient-from) via-(--dark-color-gradient-via) to-(--dark-color-gradient-to);
 }
 
 .gradient-text-light {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-[--light-color-gradient-from] via-[--light-color-gradient-via] to-[--light-color-gradient-to];
+  @apply bg-gradient-to-br from-(--light-color-gradient-from) via-(--light-color-gradient-via) to-(--light-color-gradient-to);
 }

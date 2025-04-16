@@ -1,6 +1,6 @@
 ---
-import Metadata from "~/components/metadata.astro";
-import Footer from "~/components/footer.astro";
+import Metadata from "../components/metadata.astro";
+import Footer from "../components/footer.astro";
 
 export interface Props {
   title?: string;
@@ -15,7 +15,7 @@ const { title = "AstroNvim" } = Astro.props;
     <Metadata title={title} />
   </head>
   <body
-    class="overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="overflow-x-hidden bg-bg text-text text-base selection:bg-secondary selection:text-white"
   >
     <slot />
     <Footer />
