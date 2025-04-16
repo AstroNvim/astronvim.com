@@ -1,8 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
-import ContentSection from "~/components/content-section.astro";
-import astrodarkImage from "~/assets/themes/astrodark.png";
-import astrolightImage from "~/assets/themes/astrolight.png";
+import ContentSection from "../components/content-section.astro";
+import astrodarkImage from "../assets/themes/astrodark.png";
+import astrolightImage from "../assets/themes/astrolight.png";
 import { Image } from "astro:assets";
 ---
 
@@ -16,14 +16,14 @@ import { Image } from "astro:assets";
     </Fragment>
     <a
       href="https://docs.astronvim.com"
-      class="flex items-center justify-center gap-2 bg-primary px-6 py-3 font-medium text-[--color-background] hover:bg-secondary hover:text-[--color-background]"
+      class="big-btn flex items-center justify-center gap-2 bg-primary px-6 py-3 font-medium text-bg"
     >
       <Icon name="tabler:rocket" class="h-8 text-lg" />
       <span>Get started</span>
     </a>
     <div class="mx-auto max-w-screen-2xl pt-8">
       <div
-        class="relative rounded-lg bg-gradient-to-br from-[--color-gradient-from] via-[--color-gradient-via] to-[--color-gradient-to] p-[0.0625rem] md:p-1"
+        class="relative rounded-lg bg-gradient-to-br from-(--color-gradient-from) via-(--color-gradient-via) to-(--color-gradient-to) p-(0.0625rem) md:p-1"
       >
         <Image
           class="hidden rounded-lg"

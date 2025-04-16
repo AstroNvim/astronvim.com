@@ -1,6 +1,6 @@
 ---
-import ContentSection from "~/components/content-section.astro";
-import type { FAQItem } from "~/types";
+import ContentSection from "../components/content-section.astro";
+import type { FAQItem } from "../types";
 
 const faqs: Array<FAQItem> = [
   {
@@ -32,7 +32,7 @@ const faqs: Array<FAQItem> = [
       faqs.map(({ question, answer }) => (
         <li class="flex flex-col gap-4 md:p-6">
           <p class="font-extrabold text-xl" set:html={question} />
-          <p class="text-offset text-sm" set:html={answer} />
+          <p class="text-text-offset text-sm" set:html={answer} />
         </li>
       ))
     }

@@ -1,14 +1,22 @@
+// @ts-check
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import icon from "astro-icon";
+
+import tailwindcss from "@tailwindcss/vite";
+
 import sitemap from "@astrojs/sitemap";
+
+import icon from "astro-icon";
+
 import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://astronvim.com",
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
   integrations: [
-    tailwind(),
     sitemap(),
     icon({
       include: {
@@ -17,16 +25,16 @@ export default defineConfig({
     }),
     compress({
       CSS: true,
-      HTML: { removeAttributeQuotes: false },
+      HTML: {
+        "html-minifier-terser": {
+          removeAttributeQuotes: true,
+        },
+      },
       Image: false,
       JavaScript: true,
       SVG: true,
       Logger: 1,
     }),
   ],
-  vite: {
-    ssr: {
-      external: ["svgo"],
-    },
-  },
 });
+

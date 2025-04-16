@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
-import type { NavItem } from "~/types";
+import ThemeSwitcher from "../components/theme-switcher.astro";
+import type { NavItem } from "../types";
 
 const navItems: Array<NavItem> = [
   { title: "Features", url: "#features" },
@@ -19,9 +19,9 @@ const navItems: Array<NavItem> = [
 
 <header
   id="page-header"
-  class="sticky top-0 z-20 flex w-full items-center justify-between border-b border-default bg-default px-8 py-4 text-default"
+  class="sticky top-0 z-20 flex w-full items-center justify-between border-b border-border bg-bg px-8 py-4 text-text"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
+  <a class="flex items-center gap-3 hover:!text-text" href="#">
     <img
       src="/logo/astronvim.svg"
       alt="AstroNvim logo"
@@ -56,7 +56,7 @@ const navItems: Array<NavItem> = [
       <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
-      <div class="fixed inset-0 bg-default px-8 py-4 text-default">
+      <div class="fixed inset-0 bg-bg px-8 py-4 text-text">
         <div class="space-y-4" role="dialog" aria-modal="true">
           <header class="text-right">
             <button
