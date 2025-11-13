@@ -53,10 +53,21 @@ const { title = "AstroNvim" } = Astro.props;
 <link rel="manifest" href="/manifest.webmanifest" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="generator" content={generator} />
-<script
-  defer
-  data-domain="astronvim.com"
-  src="https://plausible.mehalter.com/js/script.js">
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.mehalter.com/js/pa-DkvIPDCeo9Pe9CQw5GekZ.js">
+</script>
+<script>
+  (window.plausible =
+    window.plausible ||
+    function () {
+      (plausible.q = plausible.q || []).push(arguments);
+    }),
+    (plausible.init =
+      plausible.init ||
+      function (i) {
+        plausible.o = i || {};
+      });
+  plausible.init();
 </script>
 
 <!-- initialize theme -->
