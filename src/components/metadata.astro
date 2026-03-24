@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/inter";
-import { AstroSeo } from "@astrolib/seo";
+import { Seo } from 'astro-seo-meta';
 import "../styles/global.css";
 
 const { generator } = Astro;
@@ -12,27 +12,23 @@ export interface Props {
 const { title = "AstroNvim" } = Astro.props;
 ---
 
-<AstroSeo
+<Seo
   title={title}
   description="An aesthetically pleasing and feature-rich neovim config that is extensible and easy to use with a great set of plugins"
-  canonical="https://astronvim.com"
-  openGraph={{
-    url: "https://astronvim.com",
-    title: title,
-    description:
-      "An aesthetically pleasing and feature-rich neovim config that is extensible and easy to use with a great set of plugins",
-    images: [
-      {
-        url: "https://astronvim.com/logo/banner.png",
-        alt: "AstroNvim banner",
-      },
-    ],
-    site_name: "AstroNvim",
+  keywords={['neovim','vim','nvim','astronvim','astro','astrovim','opensource','foss']}
+  icon="/logo/favicon.ico"
+  themeColor="#1a1d23"
+  colorScheme="dark"
+  robots="index, follow"
+  facebook={{
+    image: "/logo/banner.png",
+  url: "https://astronvim.com",
+    type: "website"
   }}
   twitter={{
-    handle: "@AstroNvim",
+    image: "/logo/banner.png",
     site: "@AstroNvim",
-    cardType: "summary_large_image",
+    card: "summary_large_image"
   }}
 />
 <meta charset="utf-8" />
